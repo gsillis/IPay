@@ -29,4 +29,8 @@ class RussianRouletteController {
         }
         return true
     }
+
+    func loadCurrentUser(indexPath: IndexPath) -> Person {
+        return self.arrayPessoa[indexPath.row]
+    }
 }

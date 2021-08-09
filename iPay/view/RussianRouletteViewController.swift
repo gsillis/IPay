@@ -42,17 +42,19 @@ extension RussianRouletteViewController: UITableViewDelegate, UITableViewDataSou
             return emptyCell ?? UITableViewCell()
         } else {
             let cellNomes: CustomPersonCell? = lisTableView.dequeueReusableCell(withIdentifier: "CustomPersonCell", for: indexPath) as? CustomPersonCell
+            cellNomes?.setupCell(person: self.controller.loadCurrentUser(indexPath: indexPath))
             return cellNomes ?? UITableViewCell()
         }
     }
 }
-
 
 extension RussianRouletteViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.controller.addPerson(name: textField.text)
         textField.text = nil
         self.lisTableView.reloadData()
+        self.view.endEditing(true)
         return true
     }
+
 }
