@@ -7,10 +7,17 @@
 
 import Foundation
 
+protocol RussianRouletteDelegate: AnyObject {
+    func showWinner()
+    func removeUser()
+}
+
 class RussianRouletteController {
     private var arrayImage: [String] = ["Image-1", "Image-2", "Image-3", "Image-4", "Image-5"]
     private var arrayPessoa: [Person] = []
     private var winner: Person?
+    weak var delegate: RussianRouletteDelegate?
+
 
     func addPerson(name: String?) {
         self.arrayPessoa.append(Person(name: name ?? "", image: arrayImage.randomElement() ?? ""))
@@ -39,12 +46,12 @@ class RussianRouletteController {
         self.winner = self.arrayPessoa.randomElement()
     }
 
-    func showWinner(indexPath: IndexPath) -> Bool {
+    func showWinner(indexPath: IndexPath) {
         if self.winner === self.arrayPessoa[indexPath.row] {
-            return true
+            self.delegate?.showWinner()
         } else {
             self.arrayPessoa.remove(at: indexPath.row)
+            self.delegate?.removeUser()
         }
-        return false
     }
 }

@@ -6,6 +6,7 @@ target 'iPay' do
   use_frameworks!
 
   # Pods for iPay
-    pod 'SwiftLint'
+    #pod 'SwiftLint'
+    pod 'PopupDialog', '~> 1.1'
 
 end

@@ -17,15 +17,16 @@ class RussianRouletteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.lisTableView.delegate = self
-        self.lisTableView.dataSource = self
         self.lisTableView.register(UINib(nibName: "CustomPersonCell", bundle: nil), forCellReuseIdentifier: "CustomPersonCell")
         self.lisTableView.register(UINib(nibName: "EmptyCell", bundle: nil), forCellReuseIdentifier: "EmptyCell")
+        self.lisTableView.delegate = self
+        self.lisTableView.dataSource = self
         self.lisTableView.tableFooterView = UIView()
         self.nameTextfield.delegate = self
         self.sortButton.cornerRadius()
         self.nameTextfield.cornerRadius()
         self.blockButton()
+        self.controller.delegate = self
     }
 
     private  func blockButton() {
@@ -62,11 +63,7 @@ extension RussianRouletteViewController: UITableViewDelegate, UITableViewDataSou
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if self.controller.showWinner(indexPath: indexPath) {
-            print("se lascou")
-        } else {
-            self.lisTableView.reloadData()
-        }
+        self.controller.showWinner(indexPath: indexPath)
     }
 }
 
@@ -85,5 +82,16 @@ extension RussianRouletteViewController: UITextFieldDelegate {
         // dismiss no teclado ao clicar em return
         self.view.endEditing(true)
         return true
+    }
+}
+
+// MARK: - extension RussianRouletteDelegate
+extension RussianRouletteViewController: RussianRouletteDelegate {
+    func showWinner() {
+        print("Se lascou")
+    }
+
+    func removeUser() {
+        self.lisTableView.reloadData()
     }
 }

@@ -1,16 +1,20 @@
 PODS:
-  - SwiftLint (0.43.1)
+  - DynamicBlurView (4.1.0)
+  - PopupDialog (1.1.1):
+    - DynamicBlurView (~> 4.0)
 
 DEPENDENCIES:
-  - SwiftLint
+  - PopupDialog (~> 1.1)
 
 SPEC REPOS:
   trunk:
-    - SwiftLint
+    - DynamicBlurView
+    - PopupDialog
 
 SPEC CHECKSUMS:
-  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
+  DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
+  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
 
-PODFILE CHECKSUM: 1bc6a391140f00810ae50b6490ac86356398a8ce
+PODFILE CHECKSUM: cef461c391138615a03129a290b748de38024cc0
 
 COCOAPODS: 1.10.1
