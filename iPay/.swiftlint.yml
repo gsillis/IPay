@@ -14,11 +14,11 @@ opt_in_rules: # some rules are turned off by default, so you need to opt-in
 
 included: # paths to include during linting. `--path` is ignored if present.
   - Source
-  - weather
+  - iPay
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Carthage
   - Pods
-  - weather/SceneDelegate.swift
+  - iPay/SceneDelegate.swift
   - Source/ExcludedFolder
   - Source/ExcludedFile.swift
   - Source/*/ExcludedFile.swift # Exclude files with a wildcard
