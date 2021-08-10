@@ -60,7 +60,13 @@ extension RussianRouletteViewController: UITextFieldDelegate {
         if textField.hasText {
             self.controller.addPerson(name: textField.text)
         }
+
+        // limpa o texto do texfield
+        textField.text = nil
+
         self.lisTableView.reloadData()
+
+        // dismiss no teclado ao clicar em return
         self.view.endEditing(true)
         return true
     }

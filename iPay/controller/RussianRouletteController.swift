@@ -17,17 +17,17 @@ class RussianRouletteController {
     }
 
     func arrayCount() -> Int {
-        if arrayPessoa.count == 0 {
+        if arrayPessoa.isEmpty {
             return 1
         }
         return arrayPessoa.count
     }
 
     func checkEmptyState() -> Bool {
-        if self.arrayPessoa.count > 0 {
-            return false
+        if self.arrayPessoa.isEmpty {
+            return true
         }
-        return true
+        return false
     }
 
     func loadCurrentUser(indexPath: IndexPath) -> Person {
