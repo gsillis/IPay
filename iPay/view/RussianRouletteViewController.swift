@@ -39,7 +39,7 @@ class RussianRouletteViewController: UIViewController {
     }
 
     @IBAction func sortButtonTapped(_ sender: Any) {
-        print("sortButtonTapped")
+        self.controller.randomWinner()
     }
 }
 
@@ -62,7 +62,11 @@ extension RussianRouletteViewController: UITableViewDelegate, UITableViewDataSou
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        if self.controller.showWinner(indexPath: indexPath) {
+            print("se lascou")
+        } else {
+            self.lisTableView.reloadData()
+        }
     }
 }
 
