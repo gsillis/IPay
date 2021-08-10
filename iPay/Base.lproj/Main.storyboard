@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -91,11 +92,101 @@
                         <outlet property="lisTableView" destination="j2C-GX-mb0" id="dfE-WU-8tt"/>
                         <outlet property="nameTextfield" destination="4WJ-WB-svL" id="BlN-ba-Yf5"/>
                         <outlet property="sortButton" destination="7vR-nr-vv5" id="TNO-lb-GEw"/>
+                        <segue destination="S4I-Af-pb2" kind="show" identifier="detailViewController" id="Hxm-gQ-3Vu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1044" y="111.99400299850076"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Lhw-5G-AQy">
+            <objects>
+                <viewController id="S4I-Af-pb2" customClass="DetailViewController" customModule="iPay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h0f-gH-nAz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QE0-tq-6EG">
+                                <rect key="frame" x="30" y="20" width="315" height="510"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUP-Pm-MGI">
+                                <rect key="frame" x="30" y="550" width="315" height="97"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit-card" translatesAutoresizingMaskIntoConstraints="NO" id="zFu-tP-VAU">
+                                        <rect key="frame" x="0.0" y="23" width="75" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="999" constant="51" id="9CA-Aw-qbN"/>
+                                            <constraint firstAttribute="width" priority="999" constant="75" id="T7c-nY-EsV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24F-YW-8z7">
+                                        <rect key="frame" x="89" y="30" width="226" height="36"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="PDv-IV-Uvm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <state key="normal" title="pagar">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="payBillButtonTapped:" destination="S4I-Af-pb2" eventType="touchUpInside" id="d0C-66-GrQ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="valor total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18n-LJ-3FD">
+                                        <rect key="frame" x="117" y="0.0" width="80" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 480,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="746-8E-dSj">
+                                        <rect key="frame" x="234" y="0.0" width="81" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="24F-YW-8z7" secondAttribute="trailing" id="940-ru-zjT"/>
+                                    <constraint firstItem="746-8E-dSj" firstAttribute="top" secondItem="sUP-Pm-MGI" secondAttribute="top" id="9Ta-9F-JzD"/>
+                                    <constraint firstItem="24F-YW-8z7" firstAttribute="top" secondItem="18n-LJ-3FD" secondAttribute="bottom" constant="9" id="GRv-s3-B20"/>
+                                    <constraint firstAttribute="bottom" secondItem="zFu-tP-VAU" secondAttribute="bottom" constant="23" id="I6v-mJ-Irg"/>
+                                    <constraint firstItem="18n-LJ-3FD" firstAttribute="top" secondItem="sUP-Pm-MGI" secondAttribute="top" id="ILv-vl-SMo"/>
+                                    <constraint firstItem="24F-YW-8z7" firstAttribute="leading" secondItem="zFu-tP-VAU" secondAttribute="trailing" constant="14" id="MaO-Iv-sPC"/>
+                                    <constraint firstAttribute="bottom" secondItem="24F-YW-8z7" secondAttribute="bottom" constant="31" id="Msg-Px-R4f"/>
+                                    <constraint firstAttribute="height" constant="97" id="Teg-mv-ifN"/>
+                                    <constraint firstItem="18n-LJ-3FD" firstAttribute="leading" secondItem="sUP-Pm-MGI" secondAttribute="leading" constant="117" id="blk-uJ-2Ul"/>
+                                    <constraint firstAttribute="trailing" secondItem="746-8E-dSj" secondAttribute="trailing" id="lcE-j8-jL1"/>
+                                    <constraint firstItem="746-8E-dSj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="18n-LJ-3FD" secondAttribute="trailing" constant="8" symbolic="YES" id="qqQ-hQ-zoP"/>
+                                    <constraint firstItem="zFu-tP-VAU" firstAttribute="leading" secondItem="sUP-Pm-MGI" secondAttribute="leading" id="v6D-OH-fgI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9sm-Du-4vI"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="sUP-Pm-MGI" firstAttribute="leading" secondItem="9sm-Du-4vI" secondAttribute="leading" constant="30" id="2Mb-X1-cyB"/>
+                            <constraint firstItem="QE0-tq-6EG" firstAttribute="top" secondItem="9sm-Du-4vI" secondAttribute="top" constant="20" id="N9j-Pm-ilK"/>
+                            <constraint firstItem="sUP-Pm-MGI" firstAttribute="top" secondItem="QE0-tq-6EG" secondAttribute="bottom" constant="20" id="Wqi-bH-fNY"/>
+                            <constraint firstItem="sUP-Pm-MGI" firstAttribute="bottom" secondItem="9sm-Du-4vI" secondAttribute="bottom" id="cCd-6Y-9U7"/>
+                            <constraint firstItem="9sm-Du-4vI" firstAttribute="trailing" secondItem="sUP-Pm-MGI" secondAttribute="trailing" constant="30" id="cdn-MO-G8z"/>
+                            <constraint firstItem="QE0-tq-6EG" firstAttribute="leading" secondItem="9sm-Du-4vI" secondAttribute="leading" constant="30" id="eiW-cB-fgF"/>
+                            <constraint firstItem="9sm-Du-4vI" firstAttribute="trailing" secondItem="QE0-tq-6EG" secondAttribute="trailing" constant="30" id="yrb-JC-hlo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="df6-mR-nIp"/>
+                    <connections>
+                        <outlet property="detailTableView" destination="QE0-tq-6EG" id="fiV-i3-ru4"/>
+                        <outlet property="payBillButton" destination="24F-YW-8z7" id="DA9-4g-PDw"/>
+                        <outlet property="priceLabel" destination="746-8E-dSj" id="NiJ-o7-SO0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TJj-El-ddT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1941.5999999999999" y="111.99400299850076"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LHa-S7-3wF">
@@ -120,10 +211,14 @@
     </scenes>
     <resources>
         <image name="card" width="128" height="128"/>
+        <image name="credit-card" width="128" height="128"/>
         <image name="doc.plaintext" catalog="system" width="115" height="128"/>
         <image name="line.3.crossed.swirl.circle" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

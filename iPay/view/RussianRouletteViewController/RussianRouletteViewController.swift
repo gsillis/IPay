@@ -88,7 +88,9 @@ extension RussianRouletteViewController: UITextFieldDelegate {
 // MARK: - extension RussianRouletteDelegate
 extension RussianRouletteViewController: RussianRouletteDelegate {
     func showWinner() {
-        print("Se lascou")
+        self.showAlert("se ferrou", "vai pagar a conta", UIImage(named: "danger") ?? UIImage(), completion: {
+            self.performSegue(withIdentifier: "detailViewController", sender: self)
+        })
     }
 
     func removeUser() {
