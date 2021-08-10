@@ -8,9 +8,9 @@
 import Foundation
 
 class RussianRouletteController {
-    var arrayImage: [String] = ["Image-1", "Image-2", "Image-3", "Image-4", "Image-5"]
-    var arrayPessoa: [Person] = []
-    var winner: String?
+    private var arrayImage: [String] = ["Image-1", "Image-2", "Image-3", "Image-4", "Image-5"]
+    private var arrayPessoa: [Person] = []
+    private var winner: String?
 
     func addPerson(name: String?) {
         self.arrayPessoa.append(Person(name: name ?? "", image: arrayImage.randomElement() ?? ""))
@@ -24,13 +24,14 @@ class RussianRouletteController {
     }
 
     func checkEmptyState() -> Bool {
-        if self.arrayPessoa.isEmpty {
-            return true
-        }
-        return false
+        return arrayPessoa.isEmpty
     }
 
     func loadCurrentUser(indexPath: IndexPath) -> Person {
         return self.arrayPessoa[indexPath.row]
+    }
+
+    func lockButton() -> Bool {
+        return arrayPessoa.count >= 2
     }
 }

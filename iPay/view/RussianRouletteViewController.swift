@@ -13,7 +13,7 @@ class RussianRouletteViewController: UIViewController {
     @IBOutlet weak var lisTableView: UITableView!
     @IBOutlet weak var sortButton: UIButton!
 
-    private var controller: RussianRouletteController = RussianRouletteController()
+    private let controller: RussianRouletteController = RussianRouletteController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +25,21 @@ class RussianRouletteViewController: UIViewController {
         self.nameTextfield.delegate = self
         self.sortButton.cornerRadius()
         self.nameTextfield.cornerRadius()
+        self.blockButton()
+    }
+
+    private  func blockButton() {
+        if self.controller.lockButton() {
+            self.sortButton.isUserInteractionEnabled = true
+            self.sortButton.alpha = 1.0
+        } else {
+            self.sortButton.isUserInteractionEnabled = false
+            self.sortButton.alpha = 0.5
+        }
     }
 
     @IBAction func sortButtonTapped(_ sender: Any) {
+        print("sortButtonTapped")
     }
 }
 
@@ -65,7 +77,7 @@ extension RussianRouletteViewController: UITextFieldDelegate {
         textField.text = nil
 
         self.lisTableView.reloadData()
-
+        self.blockButton()
         // dismiss no teclado ao clicar em return
         self.view.endEditing(true)
         return true
