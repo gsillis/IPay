@@ -11,6 +11,7 @@ class RussianRouletteViewController: UIViewController {
 
     @IBOutlet weak var nameTextfield: UITextField!
     @IBOutlet weak var lisTableView: UITableView!
+    @IBOutlet weak var sortButton: UIButton!
 
     private var controller: RussianRouletteController = RussianRouletteController()
 
@@ -22,7 +23,8 @@ class RussianRouletteViewController: UIViewController {
         self.lisTableView.register(UINib(nibName: "EmptyCell", bundle: nil), forCellReuseIdentifier: "EmptyCell")
         self.lisTableView.tableFooterView = UIView()
         self.nameTextfield.delegate = self
-
+        self.sortButton.cornerRadius()
+        self.nameTextfield.cornerRadius()
     }
 
     @IBAction func sortButtonTapped(_ sender: Any) {
@@ -46,15 +48,20 @@ extension RussianRouletteViewController: UITableViewDelegate, UITableViewDataSou
             return cellNomes ?? UITableViewCell()
         }
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    }
 }
 
+// MARK: - extension UITextFieldDelegate
 extension RussianRouletteViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.controller.addPerson(name: textField.text)
-        textField.text = nil
+        if textField.hasText {
+            self.controller.addPerson(name: textField.text)
+        }
         self.lisTableView.reloadData()
         self.view.endEditing(true)
         return true
     }
-
 }

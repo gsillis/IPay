@@ -90,6 +90,7 @@
                     <connections>
                         <outlet property="lisTableView" destination="j2C-GX-mb0" id="dfE-WU-8tt"/>
                         <outlet property="nameTextfield" destination="4WJ-WB-svL" id="BlN-ba-Yf5"/>
+                        <outlet property="sortButton" destination="7vR-nr-vv5" id="TNO-lb-GEw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -102,6 +103,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cwp-7Z-u9L" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gMG-cB-o0j">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
