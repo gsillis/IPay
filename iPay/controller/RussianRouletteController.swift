@@ -54,4 +54,17 @@ class RussianRouletteController {
             self.delegate?.removeUser()
         }
     }
+
+    func jsonParse() -> TotalValue? {
+        do {
+            if let path = Bundle.main.path(forResource: "JSONData", ofType: "json") {
+                let data: Data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let value: TotalValue = try TotalValue(data: data)
+               return value
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        return nil
+    }
 }

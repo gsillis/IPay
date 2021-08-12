@@ -9,9 +9,13 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var value: TotalValue?
+
     @IBOutlet weak var detailTableView: UITableView!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var payBillButton: UIButton!
+
+    private var controller: DetailController = DetailController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +31,12 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return value?.productList.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let customCell: DetailTableViewCell? = detailTableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as? DetailTableViewCell
-
+        customCell?.setupCell(value: value?.productList[indexPath.row])
         return customCell ?? UITableViewCell()
     }
 

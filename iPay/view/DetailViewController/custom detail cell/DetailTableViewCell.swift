@@ -24,5 +24,13 @@ class DetailTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
+    func setupCell(value: Product?) {
+        if let data = value {
+            self.productImage.image = UIImage(named: data.productID)
+            self.priceLabel.text = String(data.price)
+            self.productNameLabel.text = data.name
+            self.quantityLabel.text = String(data.quantity)
+        }
+    }
 }
