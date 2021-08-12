@@ -27,6 +27,10 @@ class DetailViewController: UIViewController {
     }
     @IBAction func payBillButtonTapped(_ sender: Any) {
     }
+
+    private func setupPriceLabel() {
+      
+    }
 }
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -39,6 +43,4 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         customCell?.setupCell(value: value?.productList[indexPath.row])
         return customCell ?? UITableViewCell()
     }
-
-
 }
