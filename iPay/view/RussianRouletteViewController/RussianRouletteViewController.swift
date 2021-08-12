@@ -46,7 +46,7 @@ class RussianRouletteViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detailVc: DetailViewController? = segue.destination as? DetailViewController
         let detail: TotalValue? = sender as? TotalValue
-        detailVc?.value = detail
+        detailVc?.controller = DetailController(value: detail)
     }
 }
 

@@ -9,21 +9,18 @@ import Foundation
 
 class DetailController {
 
-//    func jsonParse() -> TotalValue? {
-//        do {
-//            if let path = Bundle.main.path(forResource: "JSONData", ofType: "json") {
-//                let data = try  Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-//                let value: TotalValue = try TotalValue(data: data)
-//
-//               return value
-//            }
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//        return nil
-//    }
+    var value: TotalValue?
 
-    func count() -> Int {
-        return 1
+    init(value: TotalValue?) {
+        self.value = value
+    }
+
+    var count: Int {
+        guard let data = value?.productList else { return  1}
+        return data.count
+    }
+
+    func loadProduct(indexPath: IndexPath) -> Product? {
+        return value?.productList[indexPath.row]
     }
 }
