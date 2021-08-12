@@ -13,12 +13,12 @@
 		DE02B16326B9FB8C000FFB24 /* RussianRouletteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02B16226B9FB8C000FFB24 /* RussianRouletteViewController.swift */; };
 		DE02B16626B9FB8C000FFB24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE02B16426B9FB8C000FFB24 /* Main.storyboard */; };
 		DE02B16B26B9FB8E000FFB24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE02B16926B9FB8E000FFB24 /* LaunchScreen.storyboard */; };
+		DE7ABF3B26C44393009C4015 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7ABF3A26C44393009C4015 /* DetailController.swift */; };
 		DE80AC3526C2FA1200A1881F /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80AC3426C2FA1200A1881F /* UIViewController+Extensions.swift */; };
 		DE80AC3926C30FA700A1881F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80AC3826C30FA700A1881F /* DetailViewController.swift */; };
 		DE80AC3D26C310B600A1881F /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80AC3B26C310B600A1881F /* DetailTableViewCell.swift */; };
 		DE80AC3E26C310B600A1881F /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE80AC3C26C310B600A1881F /* DetailTableViewCell.xib */; };
 		DE80AC4026C314E500A1881F /* TotalValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80AC3F26C314E500A1881F /* TotalValue.swift */; };
-		DE80AC4326C3161200A1881F /* FetchTotalValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80AC4226C3161200A1881F /* FetchTotalValue.swift */; };
 		DEA26E5726C17FC8005AEA36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA26E5626C17FC8005AEA36 /* Assets.xcassets */; };
 		DEA26E5926C17FE9005AEA36 /* JSONData.json in Resources */ = {isa = PBXBuildFile; fileRef = DEA26E5826C17FE9005AEA36 /* JSONData.json */; };
 		DEA26E6026C18830005AEA36 /* CustomPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA26E5E26C18830005AEA36 /* CustomPersonCell.swift */; };
@@ -41,12 +41,12 @@
 		DE02B16526B9FB8C000FFB24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE02B16A26B9FB8E000FFB24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE02B16C26B9FB8E000FFB24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE7ABF3A26C44393009C4015 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		DE80AC3426C2FA1200A1881F /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		DE80AC3826C30FA700A1881F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DE80AC3B26C310B600A1881F /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		DE80AC3C26C310B600A1881F /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		DE80AC3F26C314E500A1881F /* TotalValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalValue.swift; sourceTree = "<group>"; };
-		DE80AC4226C3161200A1881F /* FetchTotalValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTotalValue.swift; sourceTree = "<group>"; };
 		DEA26E5626C17FC8005AEA36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/RoletaRussa/RoletaRussa/Assets.xcassets; sourceTree = "<group>"; };
 		DEA26E5826C17FE9005AEA36 /* JSONData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONData.json; sourceTree = "<group>"; };
 		DEA26E5E26C18830005AEA36 /* CustomPersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPersonCell.swift; sourceTree = "<group>"; };
@@ -149,14 +149,6 @@
 			path = "custom detail cell";
 			sourceTree = "<group>";
 		};
-		DE80AC4126C315F500A1881F /* network */ = {
-			isa = PBXGroup;
-			children = (
-				DE80AC4226C3161200A1881F /* FetchTotalValue.swift */,
-			);
-			path = network;
-			sourceTree = "<group>";
-		};
 		DEA26E5A26C1844D005AEA36 /* mock */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,7 +160,6 @@
 		DEA26E5B26C18454005AEA36 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				DE80AC4126C315F500A1881F /* network */,
 				DEA26E5A26C1844D005AEA36 /* mock */,
 				DEA26E6226C18E0D005AEA36 /* Person.swift */,
 				DE80AC3F26C314E500A1881F /* TotalValue.swift */,
@@ -180,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				DEA26E6826C1B363005AEA36 /* RussianRouletteController.swift */,
+				DE7ABF3A26C44393009C4015 /* DetailController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -332,7 +324,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE80AC4026C314E500A1881F /* TotalValue.swift in Sources */,
-				DE80AC4326C3161200A1881F /* FetchTotalValue.swift in Sources */,
 				DE80AC3526C2FA1200A1881F /* UIViewController+Extensions.swift in Sources */,
 				DEA26E6626C191CB005AEA36 /* UIView+Extensions.swift in Sources */,
 				DEA26E7026C1B614005AEA36 /* EmptyCell.swift in Sources */,
@@ -340,6 +331,7 @@
 				DEA26E6926C1B363005AEA36 /* RussianRouletteController.swift in Sources */,
 				DE02B16326B9FB8C000FFB24 /* RussianRouletteViewController.swift in Sources */,
 				DEA26E6026C18830005AEA36 /* CustomPersonCell.swift in Sources */,
+				DE7ABF3B26C44393009C4015 /* DetailController.swift in Sources */,
 				DE80AC3926C30FA700A1881F /* DetailViewController.swift in Sources */,
 				DE02B15F26B9FB8C000FFB24 /* AppDelegate.swift in Sources */,
 				DE02B16126B9FB8C000FFB24 /* SceneDelegate.swift in Sources */,

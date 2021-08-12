@@ -42,6 +42,12 @@ class RussianRouletteViewController: UIViewController {
     @IBAction func sortButtonTapped(_ sender: Any) {
         self.controller.randomWinner()
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailVc: DetailViewController? = segue.destination as? DetailViewController
+        let detail: TotalValue? = sender as? TotalValue
+        detailVc?.controller = DetailController(value: detail)
+    }
 }
 
 // MARK: - extension UITableViewDelegate, UITableViewDataSource
@@ -89,7 +95,7 @@ extension RussianRouletteViewController: UITextFieldDelegate {
 extension RussianRouletteViewController: RussianRouletteDelegate {
     func showWinner() {
         self.showAlert("se ferrou", "vai pagar a conta", UIImage(named: "danger") ?? UIImage(), completion: {
-            self.performSegue(withIdentifier: "detailViewController", sender: self)
+            self.performSegue(withIdentifier: "detailViewController", sender: self.controller.jsonParse())
         })
     }
 

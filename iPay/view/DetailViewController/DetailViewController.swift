@@ -13,28 +13,30 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var payBillButton: UIButton!
 
+    var controller: DetailController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.detailTableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailTableViewCell")
         self.detailTableView.delegate = self
         self.detailTableView.dataSource = self
-
+        self.setupPriceLabel()
     }
-    @IBAction func payBillButtonTapped(_ sender: Any) {
+    @IBAction func payBillButtonTapped(_ sender: Any) {}
+
+    private func setupPriceLabel() {
+        self.priceLabel.text = String(format: "R$ %.2f ", controller?.value?.totalValue ?? 0.0)
     }
 }
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return controller?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let customCell: DetailTableViewCell? = detailTableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as? DetailTableViewCell
-
+        customCell?.setupCell(value: controller?.loadProduct(indexPath: indexPath))
         return customCell ?? UITableViewCell()
     }
-
-
 }
