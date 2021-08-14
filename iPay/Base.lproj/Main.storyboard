@@ -5,14 +5,13 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Histórico-->
         <scene sceneID="bKD-v0-MGv">
             <objects>
-                <viewController id="wO2-1u-qqq" sceneMemberID="viewController">
+                <viewController interfaceStyle="dark" id="wO2-1u-qqq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nxM-Zp-mQM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +27,7 @@
         <!--Roleta-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RussianRouletteViewController" customModule="iPay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController interfaceStyle="dark" id="BYZ-38-t0r" customClass="RussianRouletteViewController" customModule="iPay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,6 +47,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Yf2-pc-WIJ"/>
                                         </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -102,17 +102,18 @@
         <!--Detail View Controller-->
         <scene sceneID="Lhw-5G-AQy">
             <objects>
-                <viewController id="S4I-Af-pb2" customClass="DetailViewController" customModule="iPay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="S4I-Af-pb2" customClass="DetailViewController" customModule="iPay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h0f-gH-nAz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QE0-tq-6EG">
-                                <rect key="frame" x="30" y="20" width="315" height="510"/>
-                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <rect key="frame" x="30" y="20" width="315" height="530"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUP-Pm-MGI">
-                                <rect key="frame" x="30" y="550" width="315" height="97"/>
+                                <rect key="frame" x="30" y="570" width="315" height="97"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit-card" translatesAutoresizingMaskIntoConstraints="NO" id="zFu-tP-VAU">
                                         <rect key="frame" x="0.0" y="23" width="75" height="51"/>
@@ -148,7 +149,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="24F-YW-8z7" secondAttribute="trailing" id="940-ru-zjT"/>
                                     <constraint firstItem="746-8E-dSj" firstAttribute="top" secondItem="sUP-Pm-MGI" secondAttribute="top" id="9Ta-9F-JzD"/>
@@ -166,7 +167,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9sm-Du-4vI"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="sUP-Pm-MGI" firstAttribute="leading" secondItem="9sm-Du-4vI" secondAttribute="leading" constant="30" id="2Mb-X1-cyB"/>
                             <constraint firstItem="QE0-tq-6EG" firstAttribute="top" secondItem="9sm-Du-4vI" secondAttribute="top" constant="20" id="N9j-Pm-ilK"/>
@@ -187,21 +188,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJj-El-ddT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1941.5999999999999" y="111.99400299850076"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="wzs-Zx-C9K">
-            <objects>
-                <viewController id="FJx-Q3-f68" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zNe-76-5Z9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="lN1-d7-pYP"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hYy-wV-GnA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2854" y="112"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LHa-S7-3wF">
@@ -232,11 +218,5 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

@@ -22,7 +22,17 @@ class DetailViewController: UIViewController {
         self.detailTableView.dataSource = self
         self.setupPriceLabel()
     }
-    @IBAction func payBillButtonTapped(_ sender: Any) {}
+    @IBAction func payBillButtonTapped(_ sender: Any) {
+        self.imagePicker()
+    }
+
+    private func imagePicker() {
+        let vc: UIImagePickerController = UIImagePickerController()
+        vc.sourceType = .camera
+        vc.allowsEditing = true
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
+    }
 
     private func setupPriceLabel() {
         self.priceLabel.text = String(format: "R$ %.2f ", controller?.value?.totalValue ?? 0.0)
@@ -38,5 +48,17 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         let customCell: DetailTableViewCell? = detailTableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as? DetailTableViewCell
         customCell?.setupCell(value: controller?.loadProduct(indexPath: indexPath))
         return customCell ?? UITableViewCell()
+    }
+}
+
+
+extension DetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.editedImage] as? UIImage {
+            print(image.size)
+            picker.dismiss(animated: true, completion: nil)
+        } else {
+            print("não foi possivel salvar imagem")
+        }
     }
 }
