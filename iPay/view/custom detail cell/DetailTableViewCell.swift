@@ -27,11 +27,18 @@ class DetailTableViewCell: UITableViewCell {
 
     func setupCell(value: Product?) {
         if let data = value {
-            self.productImage.image = UIImage(named: data.productID)
             self.priceLabel.text = String(format: " R$ %.2f", data.price)
             self.productNameLabel.text = data.name
             self.quantityLabel.text = String(data.quantity)
             self.productImage.image = UIImage(named: data.productType)
+        }
+    }
+
+    func setupCell(value: HistoryAccount?) {
+        if let data = value {
+            self.productImage.image = UIImage(named: data.iconImage)
+            self.priceLabel.text = String(format: " R$ %.2f", data.price)
+            self.productNameLabel.text = data.name
         }
     }
 }

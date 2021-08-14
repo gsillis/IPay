@@ -11,14 +11,29 @@
         <!--Histórico-->
         <scene sceneID="bKD-v0-MGv">
             <objects>
-                <viewController interfaceStyle="dark" id="wO2-1u-qqq" sceneMemberID="viewController">
+                <viewController interfaceStyle="dark" id="wO2-1u-qqq" customClass="PurchaseViewController" customModule="iPay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nxM-Zp-mQM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fDj-76-W42">
+                                <rect key="frame" x="30" y="20" width="315" height="598"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="g0X-s6-veC"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fDj-76-W42" firstAttribute="top" secondItem="g0X-s6-veC" secondAttribute="top" constant="20" id="hCW-dV-o7p"/>
+                            <constraint firstItem="fDj-76-W42" firstAttribute="bottom" secondItem="g0X-s6-veC" secondAttribute="bottom" id="jd0-bx-pbN"/>
+                            <constraint firstItem="fDj-76-W42" firstAttribute="leading" secondItem="g0X-s6-veC" secondAttribute="leading" constant="30" id="nTu-be-XRg"/>
+                            <constraint firstItem="g0X-s6-veC" firstAttribute="trailing" secondItem="fDj-76-W42" secondAttribute="trailing" constant="30" id="tWY-1p-Nem"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Histórico" image="doc.plaintext" catalog="system" id="tRz-MM-Hua"/>
+                    <connections>
+                        <outlet property="purchaseTableView" destination="fDj-76-W42" id="hHz-k0-9Fi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1u-V6-gsJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,7 +62,6 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Yf2-pc-WIJ"/>
                                         </constraints>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>

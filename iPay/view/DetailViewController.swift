@@ -39,6 +39,7 @@ class DetailViewController: UIViewController {
     }
 }
 
+// MARK: - extension UITableViewDelegate, UITableViewDataSource
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return controller?.count ?? 0
@@ -51,14 +52,11 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-
+// MARK: - extension UIImagePickerControllerDelegate, UINavigationControllerDelegate
 extension DetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[.editedImage] as? UIImage {
-            print(image.size)
-            picker.dismiss(animated: true, completion: nil)
-        } else {
-            print("não foi possivel salvar imagem")
-        }
+        guard let image = info[.editedImage] as? UIImage else { return }
+        print(image.size)
+        picker.dismiss(animated: true, completion: nil)
     }
 }
