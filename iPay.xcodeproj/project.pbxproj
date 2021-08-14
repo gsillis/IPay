@@ -122,27 +122,13 @@
 			path = iPay;
 			sourceTree = "<group>";
 		};
-		DE80AC3626C30F6700A1881F /* RussianRouletteViewController */ = {
-			isa = PBXGroup;
-			children = (
-				DE02B16226B9FB8C000FFB24 /* RussianRouletteViewController.swift */,
-				DEA26E6726C19215005AEA36 /* custom cell */,
-			);
-			path = RussianRouletteViewController;
-			sourceTree = "<group>";
-		};
-		DE80AC3726C30F8600A1881F /* DetailViewController */ = {
-			isa = PBXGroup;
-			children = (
-				DE80AC3826C30FA700A1881F /* DetailViewController.swift */,
-				DE80AC3A26C3109800A1881F /* custom detail cell */,
-			);
-			path = DetailViewController;
-			sourceTree = "<group>";
-		};
 		DE80AC3A26C3109800A1881F /* custom detail cell */ = {
 			isa = PBXGroup;
 			children = (
+				DEA26E5E26C18830005AEA36 /* CustomPersonCell.swift */,
+				DEA26E5F26C18830005AEA36 /* CustomPersonCell.xib */,
+				DEA26E6E26C1B614005AEA36 /* EmptyCell.swift */,
+				DEA26E6F26C1B614005AEA36 /* EmptyCell.xib */,
 				DE80AC3B26C310B600A1881F /* DetailTableViewCell.swift */,
 				DE80AC3C26C310B600A1881F /* DetailTableViewCell.xib */,
 			);
@@ -179,8 +165,9 @@
 		DEA26E5D26C18460005AEA36 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				DE80AC3726C30F8600A1881F /* DetailViewController */,
-				DE80AC3626C30F6700A1881F /* RussianRouletteViewController */,
+				DE80AC3826C30FA700A1881F /* DetailViewController.swift */,
+				DE02B16226B9FB8C000FFB24 /* RussianRouletteViewController.swift */,
+				DE80AC3A26C3109800A1881F /* custom detail cell */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -192,17 +179,6 @@
 				DEA26E6526C191CB005AEA36 /* UIView+Extensions.swift */,
 			);
 			path = extension;
-			sourceTree = "<group>";
-		};
-		DEA26E6726C19215005AEA36 /* custom cell */ = {
-			isa = PBXGroup;
-			children = (
-				DEA26E5E26C18830005AEA36 /* CustomPersonCell.swift */,
-				DEA26E5F26C18830005AEA36 /* CustomPersonCell.xib */,
-				DEA26E6E26C1B614005AEA36 /* EmptyCell.swift */,
-				DEA26E6F26C1B614005AEA36 /* EmptyCell.xib */,
-			);
-			path = "custom cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

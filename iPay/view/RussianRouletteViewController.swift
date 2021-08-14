@@ -69,7 +69,10 @@ extension RussianRouletteViewController: UITableViewDelegate, UITableViewDataSou
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.controller.showWinner(indexPath: indexPath)
+        // arruma o problema de crash ao clicar na cell com emptystate true
+        if !controller.checkEmptyState() {
+            self.controller.showWinner(indexPath: indexPath)
+        }
     }
 }
 

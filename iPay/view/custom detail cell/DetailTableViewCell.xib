@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -46,7 +45,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9lf-6B-vDh" firstAttribute="leading" secondItem="w9g-La-99t" secondAttribute="leading" id="Ouh-RH-pNJ"/>
                             <constraint firstAttribute="bottom" secondItem="9lf-6B-vDh" secondAttribute="bottom" constant="8" id="Ubz-nU-Cyw"/>
@@ -61,6 +60,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="w9g-La-99t" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="UrN-nz-7Sq"/>
                     <constraint firstAttribute="bottom" secondItem="w9g-La-99t" secondAttribute="bottom" id="iIu-gz-4Ho"/>
@@ -80,8 +80,5 @@
     </objects>
     <resources>
         <image name="beer" width="512" height="512"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
