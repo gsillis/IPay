@@ -18,7 +18,6 @@ class RussianRouletteController {
     private var winner: Person?
     weak var delegate: RussianRouletteDelegate?
 
-
     func addPerson(name: String?) {
         self.arrayPessoa.append(Person(name: name ?? "", image: arrayImage.randomElement() ?? ""))
     }
@@ -56,15 +55,7 @@ class RussianRouletteController {
     }
 
     func jsonParse() -> TotalValue? {
-        do {
-            if let path = Bundle.main.path(forResource: "JSONData", ofType: "json") {
-                let data: Data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let value: TotalValue = try TotalValue(data: data)
-               return value
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
-        return nil
+    let json: JsonParse = JsonParse()
+      return json.jsonParse(data: TotalValue.self, for: "JSONData")
     }
 }

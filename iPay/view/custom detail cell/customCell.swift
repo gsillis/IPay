@@ -9,6 +9,8 @@ import UIKit
 
 class DetailTableViewCell: UITableViewCell {
 
+    static let customCell: String = "DetailTableViewCell"
+
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!

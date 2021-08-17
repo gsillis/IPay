@@ -17,7 +17,7 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.detailTableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailTableViewCell")
+        self.detailTableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: DetailTableViewCell.customCell)
         self.detailTableView.delegate = self
         self.detailTableView.dataSource = self
         self.setupPriceLabel()
@@ -46,7 +46,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let customCell: DetailTableViewCell? = detailTableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as? DetailTableViewCell
+        let customCell: DetailTableViewCell? = detailTableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.customCell, for: indexPath) as? DetailTableViewCell
         customCell?.setupCell(value: controller?.loadProduct(indexPath: indexPath))
         return customCell ?? UITableViewCell()
     }

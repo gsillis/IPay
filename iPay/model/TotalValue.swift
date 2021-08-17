@@ -21,12 +21,12 @@ import Foundation
 //    },
 
 
-struct TotalValue: Codable {
+struct TotalValue: Decodable {
     let totalValue: Double
     let productList: [Product]
 }
 
-struct Product: Codable {
+struct Product: Decodable {
     let productID: String
     let productType: String
     let name: String
@@ -34,8 +34,8 @@ struct Product: Codable {
     let quantity: Int
 }
 
-extension TotalValue {
-    init(data: Data) throws {
-        self = try JSONDecoder().decode(TotalValue.self, from: data)
-    }
-}
+//extension TotalValue {
+//    init(data: Data) throws {
+//        self = try JSONDecoder().decode(TotalValue.self, from: data)
+//    }
+//}
