@@ -16,7 +16,7 @@ class PurchaseViewController: UIViewController {
         super.viewDidLoad()
         self.purchaseTableView.delegate = self
         self.purchaseTableView.dataSource = self
-        self.purchaseTableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailTableViewCell")
+        self.purchaseTableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: DetailTableViewCell.customCell)
 
     }
 
@@ -42,7 +42,7 @@ extension PurchaseViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: DetailTableViewCell? = purchaseTableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as? DetailTableViewCell
+        let cell: DetailTableViewCell? = purchaseTableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.customCell, for: indexPath) as? DetailTableViewCell
         cell?.setupCell(value: dataHistory?.historyAccountList[indexPath.row])
         
         return cell ?? UITableViewCell()
